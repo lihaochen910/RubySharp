@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{76151938-E38D-4690-A17E-8F59D6F0F037}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RubySharp.Core</RootNamespace>
+    <AssemblyName>RubySharp.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Fasterflect, Version=2.1.3.0, Culture=neutral, PublicKeyToken=38d18473284c1ca7">
+      <HintPath>..\packages\fasterflect.2.1.3\lib\net40\Fasterflect.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\PegParser.cs">
+      <Link>PegParser.cs</Link>
+    </Compile>
+    <Compile Include="BlockContext.cs" />
+    <Compile Include="Compiler\AstParser.cs" />
+    <Compile Include="Compiler\Source.cs" />
+    <Compile Include="Compiler\TextReaderCharStream.cs" />
+    <Compile Include="Compiler\ICharStream.cs" />
+    <Compile Include="Compiler\TextCharStream.cs" />
+    <Compile Include="Exceptions\TypeError.cs" />
+    <Compile Include="Exceptions\ValueError.cs" />
+    <Compile Include="Exceptions\NameError.cs" />
+    <Compile Include="Expressions\AssignExpression.cs" />
+    <Compile Include="Expressions\AssignDotExpressions.cs" />
+    <Compile Include="Expressions\BaseExpression.cs" />
+    <Compile Include="Expressions\CompositeExpression.cs" />
+    <Compile Include="Expressions\ClassExpression.cs" />
+    <Compile Include="Expressions\AssignInstanceVarExpression.cs" />
+    <Compile Include="Expressions\ClassVarExpression.cs" />
+    <Compile Include="Expressions\AssignClassVarExpression.cs" />
+    <Compile Include="Expressions\AssignIndexedExpression.cs" />
+    <Compile Include="Expressions\INamedExpression.cs" />
+    <Compile Include="Expressions\SelfExpression.cs" />
+    <Compile Include="Expressions\NegationExpression.cs" />
+    <Compile Include="Expressions\HashExpression.cs" />
+    <Compile Include="Expressions\DoubleColonExpression.cs" />
+    <Compile Include="Expressions\ModuleExpression.cs" />
+    <Compile Include="Expressions\RangeExpression.cs" />
+    <Compile Include="Expressions\UntilExpression.cs" />
+    <Compile Include="Expressions\ForInExpression.cs" />
+    <Compile Include="Expressions\WhileExpression.cs" />
+    <Compile Include="Expressions\DefExpression.cs" />
+    <Compile Include="Expressions\IfExpression.cs" />
+    <Compile Include="Compiler\Lexer.cs" />
+    <Compile Include="Compiler\Parser.cs" />
+    <Compile Include="Exceptions\NoMethodError.cs" />
+    <Compile Include="Exceptions\SyntaxError.cs" />
+    <Compile Include="Compiler\Token.cs" />
+    <Compile Include="Compiler\TokenType.cs" />
+    <Compile Include="Context.cs" />
+    <Compile Include="Expressions\AddExpression.cs" />
+    <Compile Include="Expressions\BinaryExpression.cs" />
+    <Compile Include="Expressions\BlockExpression.cs" />
+    <Compile Include="Expressions\CallExpression.cs" />
+    <Compile Include="Expressions\CompareOperator.cs" />
+    <Compile Include="Expressions\ConstantExpression.cs" />
+    <Compile Include="Expressions\CompareExpression.cs" />
+    <Compile Include="Expressions\IndexedExpression.cs" />
+    <Compile Include="Expressions\NegativeExpression.cs" />
+    <Compile Include="Expressions\InstanceVarExpression.cs" />
+    <Compile Include="Expressions\DivideExpression.cs" />
+    <Compile Include="Expressions\DotExpression.cs" />
+    <Compile Include="Expressions\ArrayExpression.cs" />
+    <Compile Include="Expressions\MultiplyExpression.cs" />
+    <Compile Include="Expressions\SubtractExpression.cs" />
+    <Compile Include="Expressions\NameExpression.cs" />
+    <Compile Include="Expressions\IExpression.cs" />
+    <Compile Include="Functions\LambdaFunction.cs" />
+    <Compile Include="Functions\PrintFunction.cs" />
+    <Compile Include="Functions\DefinedFunction.cs" />
+    <Compile Include="Functions\IFunction.cs" />
+    <Compile Include="Functions\PutsFunction.cs" />
+    <Compile Include="Functions\RequireFunction.cs" />
+    <Compile Include="LanguageNew\NumericClass.cs" />
+    <Compile Include="LanguageNew\RangeClass.cs" />
+    <Compile Include="Language\ArrayClass.cs" />
+    <Compile Include="Language\FunctionWrapper.cs" />
+    <Compile Include="Language\Predicates.cs" />
+    <Compile Include="Language\RangeClass.cs" />
+    <Compile Include="Language\HashClass.cs" />
+    <Compile Include="Language\DynamicArray.cs" />
+    <Compile Include="Language\DynamicHash.cs" />
+    <Compile Include="Language\DynamicObject.cs" />
+    <Compile Include="Language\Block.cs" />
+    <Compile Include="Language\FalseClass.cs" />
+    <Compile Include="Language\Range.cs" />
+    <Compile Include="Language\TrueClass.cs" />
+    <Compile Include="Language\FloatClass.cs" />
+    <Compile Include="Language\NilClass.cs" />
+    <Compile Include="Language\StringClass.cs" />
+    <Compile Include="Language\NativeClass.cs" />
+    <Compile Include="Language\DynamicClass.cs" />
+    <Compile Include="Language\FixnumClass.cs" />
+    <Compile Include="Language\Symbol.cs" />
+    <Compile Include="Machine.cs" />
+    <Compile Include="Node\AstNode.cs" />
+    <Compile Include="Node\IFunction.cs" />
+    <Compile Include="Node\LiteralNode.cs" />
+    <Compile Include="Node\VariableNode.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RubyBlockContext.cs" />
+    <Compile Include="RubyContext.cs" />
+    <Compile Include="Utilities\FastList.cs" />
+    <Compile Include="Utilities\HashCodeUtility.cs" />
+    <Compile Include="Utilities\ObjectUtilities.cs" />
+    <Compile Include="Utilities\TypeUtilities.cs" />
+    <Compile Include="Utilities\UserDataUtility.cs" />
+    <Compile Include="VM\ByteCode.cs" />
+    <Compile Include="VM\CodeGen.cs" />
+    <Compile Include="VM\IRep.cs" />
+    <Compile Include="VM\Op.cs" />
+    <Compile Include="VM\R.cs" />
+    <Compile Include="VM\Scope.cs" />
+    <Compile Include="VM\Value.cs" />
+    <Compile Include="VM\VM.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Compiler\Compiler.cd" />
+    <None Include="Context.cd" />
+    <None Include="Expressions\Expressions.cd" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="LanguageNew\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
